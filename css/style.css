@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #272727;
+    --a: #191919;
+    --shadow-black: #141414;
+    --shadow-white: #202020;
+    --primary: #fff;
+    --neon-1: #212121;
+    --neon-2: #191919;
+    --neon-3: #101010;
+    --bg-1: #202020;
+
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--bg);
+    color: var(--primary);
+    font-family: Rockwell, consolas;
+}
+
+.loader {
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.loader span {
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border: 6px solid var(--bg);
+    box-shadow: -5px -5px 20px var(--shadow-white), 5px 5px 20px var(--shadow-black);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.loader span a {
+    display: grid;
+    place-items: center;
+    background-color: var(--bg);
+    width: max(64%, 5rem);
+    aspect-ratio: 1 / 1;
+    z-index: 1;
+    border-radius: 50%;
+    color: var(--primary);
+    text-decoration: none;
+    box-shadow: -5px -5px 20px var(--shadow-white), 5px 5px 20px var(--shadow-black);
+    transition: .3s ease;
+}
+
+.loader span a:hover {
+    box-shadow: 2px 2px 5px var(--shadow-black), -2px -2px 5px var(--shadow-white);
+}
+
+.loader span a:active {
+    box-shadow: 2px 2px 5px inset var(--shadow-black), -5px -5px 10px inset var(--shadow-white);
+}
+
+.loader span a:active svg {
+    scale: .9;
+}
+
+
+.text {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    animation: animateText 25s linear infinite;
+}
+
+@keyframes animateText {
+    from {rotate: 0deg;}
+    to {rotate: 360deg;}
+}
+
+.text b {
+    position: absolute;
+    display: block;
+    transform-origin: 0 170px;
+    left: 50%;
+    font-weight: normal;
+    font-size: 1.4em;
+}
