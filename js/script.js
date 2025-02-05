@@ -1,2 +1,14 @@
-let text = document.querySelector('.text p');
-text.innerHTML = text.innerText.split("").map((char, i) => `<b style="transform:rotate(${i * 7.35}deg)">${char}</b>`).join("");
+document.addEventListener("DOMContentLoaded", () => {
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+  });
+
+  // Footer year
+  document.querySelector(".year").textContent = new Date().getFullYear();
+});
