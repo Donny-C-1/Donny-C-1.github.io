@@ -5,6 +5,40 @@
 }
 
 :root {
+    --color-primary: #1e3a8a;    /* Dark Blue */
+    --color-secondary: #334a99;  /* Slightly lighter Blue */
+    --color-tertiary: #4a5bb0;   /* Medium Blue */
+    --color-dark: #121212;       /* Black */
+    --color-light: #f0f0f0;      /* Light Grey */
+}
+
+:root {
+    --color-primary: #0B0F19;   /* Deep navy blue */
+    --color-secondary: #121725; /* Dark blue-gray */
+    --color-tertiary: #4A5C79;  /* Muted blue accent */
+    --color-dark: #090C14;      /* Very dark blue */
+    --color-light: #DCE1EB;     /* Soft, cool light blue */
+}
+
+:root {
+    --color-primary: #191607;   /* Deep dark brownish-gold */
+    --color-secondary: #24200F; /* Rich dark gold */
+    --color-tertiary: #A68A3D;  /* Muted gold accent */
+    --color-dark: #120F05;      /* Darkest shade, near-black with gold warmth */
+    --color-light: #F5E8C7;     /* Soft warm light gold */
+}
+
+:root {
+    --color-primary: #0B0F19;   /* Deep navy blue (main background) */
+    --color-secondary: #1E1325; /* Dark purple (sections, UI elements) */
+    --color-tertiary: #A67C00;  /* Rich gold (highlights, accents) */
+    --color-dark: #080A0F;      /* Darkest shade, near-black */
+    --color-light: #E5E8EA;     /* Soft cool white (text, contrast) */
+    --color-accent: #20C997;    /* Teal green (CTA buttons, interactive elements) */
+    --color-border: #40394A;    /* Muted dark purple-gray (borders, dividers) */
+}
+
+:root {
     --color-primary: #191919;
     --color-secondary: #202020;
     --color-tertiary: #757575;
@@ -116,23 +150,60 @@ nav ul li a:active {
 /* #endregion */
 
 /* #region Projects */
-.project-grid {
+.project_grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: 2rem;
 }
 
-.project {
-    background: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary));
-    padding: 1.5rem;
-    margin: 10px 0;
-    border-radius: 5px;
-    border-left: 3px solid var(--color-tertiary);
-    transition: transform 0.3s ease;
+.project_card {
+    background-color: var(--color-primary);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project:hover {
+.project_card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project_image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project_content {
+    padding: 20px;
+}
+
+.project_title {
+    color: var(--color-light);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.project_description {
+    color: var(--color-tertiary);
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.project_link {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.project_link:hover {
+    background-color: var(--color-tertiary);
 }
 /* #endregion */
 
